@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include khaled_app *.css
+recursive-include khaled_app *.csv
+recursive-include khaled_app *.html
+recursive-include khaled_app *.ico
+recursive-include khaled_app *.js
+recursive-include khaled_app *.json
+recursive-include khaled_app *.md
+recursive-include khaled_app *.png
+recursive-include khaled_app *.py
+recursive-include khaled_app *.svg
+recursive-include khaled_app *.txt
+recursive-exclude khaled_app *.pyc
