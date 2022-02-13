@@ -56,7 +56,15 @@
   "column_break_45",
   "walsh_traffic_packet_fch",
   "column_break_47",
-  "handoff"
+  "handoff",
+  "atoll_section",
+  "height_atoll",
+  "clmn_brk_radius",
+  "main_radius",
+  "extended_radius",
+  "clmn_brk_resolution",
+  "main_resolution",
+  "extended_resolution"
  ],
  "fields": [
   {
@@ -72,6 +80,7 @@
   {
    "fieldname": "sector_id",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Sector ID",
    "options": "\n0\n1\n2\n3"
   },
@@ -295,6 +304,7 @@
   {
    "fieldname": "site_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Site Name",
    "options": "Working Sites"
   },
@@ -305,11 +315,49 @@
   {
    "fieldname": "clnm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "atoll_section",
+   "fieldtype": "Section Break",
+   "label": "Atoll"
+  },
+  {
+   "fieldname": "height_atoll",
+   "fieldtype": "Data",
+   "label": "Height (Atoll)"
+  },
+  {
+   "fieldname": "clmn_brk_radius",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_radius",
+   "fieldtype": "Data",
+   "label": "Main Radius"
+  },
+  {
+   "fieldname": "extended_radius",
+   "fieldtype": "Data",
+   "label": "Extended Radius"
+  },
+  {
+   "fieldname": "clmn_brk_resolution",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_resolution",
+   "fieldtype": "Data",
+   "label": "Main Resolution"
+  },
+  {
+   "fieldname": "extended_resolution",
+   "fieldtype": "Data",
+   "label": "Extended Resolution"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2021-12-02 00:10:44.065970",
+ "modified": "2022-02-02 18:49:21.700177",
  "modified_by": "Administrator",
  "module": "Khaled App",
  "name": "Working_Sectors",

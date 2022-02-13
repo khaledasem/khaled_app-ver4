@@ -6,6 +6,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "from_survey_sites",
+  "clmn_brk_4",
+  "survey_site_name",
+  "sec__0",
   "site_name",
   "site_name_arabic",
   "site_code",
@@ -53,8 +57,10 @@
   "column_break_36",
   "district",
   "column_break_37",
-  "area",
+  "area_name",
   "clmn_brk",
+  "zone",
+  "clmn_brm_1",
   "lac",
   "column_break_40",
   "lacdec",
@@ -75,13 +81,17 @@
   "column_break_53",
   "colorcode",
   "column_break_55",
-  "packet_zone_id"
+  "packet_zone_id",
+  "additional_info_section",
+  "first_launch_date"
  ],
  "fields": [
   {
    "fieldname": "site_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Site Name",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -130,8 +140,9 @@
   {
    "default": "800 MHz",
    "fieldname": "frequency",
-   "fieldtype": "Data",
-   "label": "Frequency"
+   "fieldtype": "Select",
+   "label": "Frequency",
+   "options": "800 MHz\n1800 MHz\n800&1800 MHz"
   },
   {
    "fieldname": "bsc_name",
@@ -140,15 +151,15 @@
    "options": "BSCs"
   },
   {
-   "depends_on": "bsc_name",
    "fieldname": "bsc_ip_address",
    "fieldtype": "Read Only",
+   "hidden": 1,
    "label": " BSC IP Address"
   },
   {
-   "depends_on": "bsc_name",
    "fieldname": "mgw",
    "fieldtype": "Read Only",
+   "hidden": 1,
    "label": "MGW"
   },
   {
@@ -168,12 +179,6 @@
    "fieldtype": "Link",
    "label": "District",
    "options": "Modiriat"
-  },
-  {
-   "depends_on": "city",
-   "fieldname": "area",
-   "fieldtype": "Data",
-   "label": "Area"
   },
   {
    "fieldname": "lac",
@@ -419,20 +424,66 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "bsc_name",
    "fieldname": "msc_id",
    "fieldtype": "Read Only",
+   "hidden": 1,
    "label": "MSC ID"
   },
   {
    "fieldname": "site_code",
    "fieldtype": "Data",
    "label": "Site Code"
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Read Only",
+   "label": "Zone"
+  },
+  {
+   "fieldname": "clmn_brm_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "city",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "sec__0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "from_survey_sites",
+   "fieldtype": "Select",
+   "label": "From Survey Sites?",
+   "options": "\nYes"
+  },
+  {
+   "depends_on": "from_survey_sites",
+   "fieldname": "survey_site_name",
+   "fieldtype": "Link",
+   "label": "Survey Site Name",
+   "options": "SurveySites2"
+  },
+  {
+   "fieldname": "clmn_brk_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "additional_info_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Info"
+  },
+  {
+   "fieldname": "first_launch_date",
+   "fieldtype": "Date",
+   "label": "First launch date"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-01-19 22:11:25.572527",
+ "modified": "2022-02-02 22:15:19.351922",
  "modified_by": "Administrator",
  "module": "Khaled App",
  "name": "Working Sites",

@@ -37,10 +37,24 @@ frappe.ui.form.on('Working Sites', {
 				frm.set_df_property('msc_name', 'hidden', '0')
 				frm.set_df_property('msc_id', 'hidden', '0')
 
-				frm.doc.bsc_ip_address = 'a'
-				frm.doc.mgw = 'a'
-				frm.doc.msc_name = 'a'
-				frm.doc.msc_id = 'a'
+
+				// ----------------------------- get doc by name--------------------
+				frappe.db.get_doc('BSCs', frm.doc.bsc_name)
+		   		 .then(doc => {
+		   		 console.log(doc.name)
+		   		  console.log(doc.bsc_ip_adress)
+		        	frm.doc.bsc_ip_address = doc.bsc_ip_adress;
+					frm.doc.mgw = doc.mgw;
+					frm.doc.msc_name = doc.msc_name;
+					frm.doc.msc_id =  doc.msc_id;
+					
+					frm.refresh_field('bsc_ip_address');
+					frm.refresh_field('mgw');
+					frm.refresh_field('msc_name');
+					frm.refresh_field('msc_id');
+		    	});
+		   		 //-------------------------------------------------------------------
+
 			
 
 			} else {

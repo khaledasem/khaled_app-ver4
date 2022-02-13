@@ -10,7 +10,8 @@
   "bsc_ip_adress",
   "msc_name",
   "msc_id",
-  "mgw"
+  "mgw",
+  "vendor"
  ],
  "fields": [
   {
@@ -38,11 +39,17 @@
    "fieldname": "mgw",
    "fieldtype": "Data",
    "label": "MGW"
+  },
+  {
+   "fieldname": "vendor",
+   "fieldtype": "Select",
+   "label": "Vendor",
+   "options": "\nHW\nZTE"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-01-19 20:49:43.651323",
+ "modified": "2022-02-07 20:19:47.670566",
  "modified_by": "Administrator",
  "module": "Khaled App",
  "name": "BSCs",
